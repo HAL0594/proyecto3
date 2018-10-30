@@ -2,33 +2,6 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="HelloWorld">
-        <s:complexType />
-      </s:element>
-      <s:element name="HelloWorldResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetData">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetDataResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetDataResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="LoadData">
         <s:complexType>
           <s:sequence>
@@ -66,7 +39,7 @@
       <s:element name="ADDAfiliado">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="DPI" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DPI" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="NombreCom" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="FechaNac" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="Telefono" type="s:int" />
@@ -81,27 +54,30 @@
       <s:element name="DELAfiliado">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="DPI" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DPI" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="DELAfiliadoResponse">
         <s:complexType />
       </s:element>
+      <s:element name="Actualiza_Afiliado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DPI" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NombreCom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaNac" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Telefono" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MontoCob" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoPoliza" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Actualiza_AfiliadoResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="HelloWorldSoapIn">
-    <wsdl:part name="parameters" element="tns:HelloWorld" />
-  </wsdl:message>
-  <wsdl:message name="HelloWorldSoapOut">
-    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetDataSoapIn">
-    <wsdl:part name="parameters" element="tns:GetData" />
-  </wsdl:message>
-  <wsdl:message name="GetDataSoapOut">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
-  </wsdl:message>
   <wsdl:message name="LoadDataSoapIn">
     <wsdl:part name="parameters" element="tns:LoadData" />
   </wsdl:message>
@@ -120,15 +96,13 @@
   <wsdl:message name="DELAfiliadoSoapOut">
     <wsdl:part name="parameters" element="tns:DELAfiliadoResponse" />
   </wsdl:message>
+  <wsdl:message name="Actualiza_AfiliadoSoapIn">
+    <wsdl:part name="parameters" element="tns:Actualiza_Afiliado" />
+  </wsdl:message>
+  <wsdl:message name="Actualiza_AfiliadoSoapOut">
+    <wsdl:part name="parameters" element="tns:Actualiza_AfiliadoResponse" />
+  </wsdl:message>
   <wsdl:portType name="DBSoap">
-    <wsdl:operation name="HelloWorld">
-      <wsdl:input message="tns:HelloWorldSoapIn" />
-      <wsdl:output message="tns:HelloWorldSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetData">
-      <wsdl:input message="tns:GetDataSoapIn" />
-      <wsdl:output message="tns:GetDataSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="LoadData">
       <wsdl:input message="tns:LoadDataSoapIn" />
       <wsdl:output message="tns:LoadDataSoapOut" />
@@ -141,27 +115,13 @@
       <wsdl:input message="tns:DELAfiliadoSoapIn" />
       <wsdl:output message="tns:DELAfiliadoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Actualiza_Afiliado">
+      <wsdl:input message="tns:Actualiza_AfiliadoSoapIn" />
+      <wsdl:output message="tns:Actualiza_AfiliadoSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="DBSoap" type="tns:DBSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/GetData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="LoadData">
       <soap:operation soapAction="http://tempuri.org/LoadData" style="document" />
       <wsdl:input>
@@ -189,27 +149,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Actualiza_Afiliado">
+      <soap:operation soapAction="http://tempuri.org/Actualiza_Afiliado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="DBSoap12" type="tns:DBSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetData">
-      <soap12:operation soapAction="http://tempuri.org/GetData" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="LoadData">
       <soap12:operation soapAction="http://tempuri.org/LoadData" style="document" />
       <wsdl:input>
@@ -230,6 +181,15 @@
     </wsdl:operation>
     <wsdl:operation name="DELAfiliado">
       <soap12:operation soapAction="http://tempuri.org/DELAfiliado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualiza_Afiliado">
+      <soap12:operation soapAction="http://tempuri.org/Actualiza_Afiliado" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

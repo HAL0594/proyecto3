@@ -25,7 +25,7 @@ namespace WSBD
             return "Hola a todos";
         }
 
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-BP8VMUJ; Initial Catalog=TEST; Integrated Security=True;");
+        SqlConnection conn = new SqlConnection("Data Source=LOCALHOST; Initial Catalog=TEST; Integrated Security=True;");
         
 
         [WebMethod]
@@ -53,33 +53,33 @@ namespace WSBD
         }
 
         [WebMethod]
-        public void ADDAfiliado(int DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob,  string TipoPoliza)
+        public void ADDAfiliado(string DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob,  string TipoPoliza)
         {
 
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = string.Format("INSERT INTO [dbo].[TBL_AFILIADOS]([DPI],[NombreCom],[FechaNac],[Telefono],[MontoCob],[TipoPoliza])VALUES("+DPI+",'"+NombreCom+"','"+FechaNac+"', "+Telefono+","+MontoCob+",'"+TipoPoliza+"')");
+            cmd.CommandText = string.Format("INSERT INTO [dbo].[TBL_AFILIADOS]([DPI],[NombreCom],[FechaNac],[Telefono],[MontoCob],[TipoPoliza]) VALUES('"+DPI+"','"+NombreCom+"','"+FechaNac+"', "+Telefono+","+MontoCob+",'"+TipoPoliza+"')");
             cmd.ExecuteNonQuery();
             conn.Close();
         }
 
         [WebMethod]
-        public void DELAfiliado(int DPI)
+        public void DELAfiliado(string DPI)
         {
 
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = string.Format("DELETE FROM [dbo].[TBL_AFILIADOS] WHERE DPI = "+DPI+"");
+            cmd.CommandText = string.Format("DELETE FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '"+DPI+"'");
             cmd.ExecuteNonQuery();
             conn.Close();
         }
 
         [WebMethod]
-        public void Actualiza_Afiliado(int DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob, string TipoPoliza)
+        public void Actualiza_Afiliado(string DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob, string TipoPoliza)
         {
 
             conn.Open();
