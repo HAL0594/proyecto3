@@ -1,0 +1,5 @@
+C:\Users\HAL\Documents\Visual Studio 2015\Projects\WSBD\Catalogo\bin\Catalogo.dll.config
+C:\Users\HAL\Documents\Visual Studio 2015\Projects\WSBD\Catalogo\bin\Catalogo.dll
+C:\Users\HAL\Documents\Visual Studio 2015\Projects\WSBD\Catalogo\bin\Catalogo.pdb
+C:\Users\HAL\Documents\Visual Studio 2015\Projects\WSBD\Catalogo\obj\Debug\Catalogo.dll
+C:\Users\HAL\Documents\Visual Studio 2015\Projects\WSBD\Catalogo\obj\Debug\Catalogo.pdb

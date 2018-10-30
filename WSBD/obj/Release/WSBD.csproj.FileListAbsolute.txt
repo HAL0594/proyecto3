@@ -1,0 +1,6 @@
+C:\Users\HAL\documents\visual studio 2015\Projects\WSBD\WSBD\bin\WSBD.dll.config
+C:\Users\HAL\documents\visual studio 2015\Projects\WSBD\WSBD\bin\WSBD.dll
+C:\Users\HAL\documents\visual studio 2015\Projects\WSBD\WSBD\bin\WSBD.pdb
+C:\Users\HAL\documents\visual studio 2015\Projects\WSBD\WSBD\obj\Release\WSBD.csprojResolveAssemblyReference.cache
+C:\Users\HAL\documents\visual studio 2015\Projects\WSBD\WSBD\obj\Release\WSBD.dll
+C:\Users\HAL\documents\visual studio 2015\Projects\WSBD\WSBD\obj\Release\WSBD.pdb
