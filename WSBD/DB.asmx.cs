@@ -25,7 +25,7 @@ namespace WSBD
             return "Hola a todos";
         }
 
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-BP8VMUJ; Initial Catalog=TEST; Integrated Security=True;");
+        SqlConnection conn = new SqlConnection("Data Source=LOCALHOST; Initial Catalog=TEST; Integrated Security=True;");
         
 
         [WebMethod]
