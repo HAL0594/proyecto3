@@ -53,7 +53,7 @@ namespace WSBD
         }
 
         [WebMethod]
-        public void ADDAfiliado(int DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob,  string TipoPoliza)
+        public void ADDAfiliado(Int64 DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob,  string TipoPoliza)
         {
 
             conn.Open();
