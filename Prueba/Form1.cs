@@ -19,7 +19,7 @@ namespace Prueba
         int DPIEliminar;
         int DPIModificar;
         //Datos obtenidos de datagridview
-        int valor1;
+        Int64 valor1;
         string valor2;
         DateTime valor3;
         int valor4;
@@ -34,7 +34,7 @@ namespace Prueba
         public void RegistroSeleccionado()
         {
             //por el numero obtiene la columna
-            valor1 = int.Parse(row.Cells[0].Value.ToString());
+            valor1 = Int64.Parse(row.Cells[0].Value.ToString());
             valor2 = row.Cells[1].Value.ToString();
             valor3 = DateTime.Parse(row.Cells[2].Value.ToString());
             valor4 = int.Parse(row.Cells[3].Value.ToString());
@@ -102,7 +102,7 @@ namespace Prueba
 
             try
             {
-                int AddDPI;
+                Int64 AddDPI;
                 String AddNombre;
                 String AddApellido;
                 int addTelefono;
@@ -117,7 +117,7 @@ namespace Prueba
                 }
                 else
                 {
-                    AddDPI = int.Parse(this.txt_tp1_DPI.Text);
+                    AddDPI = Int64.Parse(this.txt_tp1_DPI.Text);
                     AddNombre = this.txt_tp1_Nombre.Text;
                     AddApellido = this.txt_tp1_Apellido.Text;
                     addTelefono = int.Parse(this.txt_tp1_Telefono.Text);
@@ -268,6 +268,11 @@ namespace Prueba
         }
 
         private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_tp1_DPI_TextChanged(object sender, EventArgs e)
         {
 
         }
