@@ -4,9 +4,9 @@ C:\Users\HAL\Documents\Visual Studio 2015\Projects\WSBD\WSBD\bin\WSBD.pdb
 C:\Users\HAL\Documents\Visual Studio 2015\Projects\WSBD\WSBD\obj\Debug\WSBD.dll
 C:\Users\HAL\Documents\Visual Studio 2015\Projects\WSBD\WSBD\obj\Debug\WSBD.pdb
 C:\Users\HAL\documents\visual studio 2015\Projects\WSBD\WSBD\obj\Debug\WSBD.csprojResolveAssemblyReference.cache
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\WSBD\bin\WSBD.dll.config
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\WSBD\bin\WSBD.dll
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\WSBD\bin\WSBD.pdb
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\WSBD\obj\Debug\WSBD.csprojResolveAssemblyReference.cache
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\WSBD\obj\Debug\WSBD.dll
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\WSBD\obj\Debug\WSBD.pdb
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WSBD\bin\WSBD.dll.config
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WSBD\bin\WSBD.dll
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WSBD\bin\WSBD.pdb
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WSBD\obj\Debug\WSBD.csprojResolveAssemblyReference.cache
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WSBD\obj\Debug\WSBD.dll
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WSBD\obj\Debug\WSBD.pdb

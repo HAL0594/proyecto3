@@ -25,17 +25,11 @@ namespace WSBD
             return "Hola a todos";
         }
 
+        //**************************************Conexiona DB************************************************************
+
         SqlConnection conn = new SqlConnection("Data Source=LOCALHOST; Initial Catalog=TEST; Integrated Security=True;");
         
-
-        [WebMethod]
-        public DataSet GetData() {
-     
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TBL_USERS",conn);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            return ds;
-        }
+        //****************************************Carga de Datagridsiews*************************************************
 
         [WebMethod]
         public DataTable LoadData(string query, string[] parameter, object[] values, string table) {
@@ -52,44 +46,89 @@ namespace WSBD
             return dt;
         }
 
+
+        //************************************************Afiliados******************************************************
         [WebMethod]
-        public void ADDAfiliado(Int64 DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob,  string TipoPoliza)
+        public void ADDAfiliado(string DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob,  string TipoPoliza)
         {
 
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = string.Format("INSERT INTO [dbo].[TBL_AFILIADOS]([DPI],[NombreCom],[FechaNac],[Telefono],[MontoCob],[TipoPoliza])VALUES("+DPI+",'"+NombreCom+"','"+FechaNac+"', "+Telefono+","+MontoCob+",'"+TipoPoliza+"')");
+            cmd.CommandText = string.Format("INSERT INTO [dbo].[TBL_AFILIADOS]([DPI],[NombreCom],[FechaNac],[Telefono],[MontoCob],[TipoPoliza]) VALUES('"+DPI+"','"+NombreCom+"','"+FechaNac+"', "+Telefono+","+MontoCob+",'"+TipoPoliza+"')");
             cmd.ExecuteNonQuery();
             conn.Close();
         }
 
         [WebMethod]
-        public void DELAfiliado(int DPI)
+        public void DELAfiliado(string DPI)
         {
 
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = string.Format("DELETE FROM [dbo].[TBL_AFILIADOS] WHERE DPI = "+DPI+"");
+            cmd.CommandText = string.Format("DELETE FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '"+DPI+"'");
             cmd.ExecuteNonQuery();
             conn.Close();
         }
 
         [WebMethod]
-        public void Actualiza_Afiliado(int DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob, string TipoPoliza)
+        public void Actualiza_Afiliado(string DPI, string NombreCom, string FechaNac, int Telefono, string InicioCob, string FinCobertura, float MontoCob, string TipoPoliza)
         {
 
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = string.Format("UPDATE [dbo].[TBL_AFILIADOS] SET [DPI] = ,[NombreCom] = ,[FechaNac] = ,[Telefono] = ,[InicioCob] = ,[FinCobertura] =,[MontoCob] = ,[EstadoPoliza] = ,[TipoPoliza] =  WHERE [DPI] =");
+            cmd.CommandText = string.Format("UPDATE [dbo].[TBL_AFILIADOS] SET [DPI] = '"+DPI+"' ,[NombreCom] = '"+NombreCom+"',[FechaNac] ='"+ FechaNac + "' ,[Telefono] = "+Telefono+",[InicioCob] = '"+InicioCob+"',[FinCobertura] ='"+FinCobertura+"',[MontoCob] = "+MontoCob+",[TipoPoliza] = '"+TipoPoliza+"' WHERE [DPI] = "+DPI+"");
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+
+
+        //**********************************Proveedores********************************************************
+
+        [WebMethod]
+        public void AddProveedor(string NIT, string Nombre, string Dirreccion, int Telefono, string Pais, string Ciudad, string Correo, string Encargado, int Estado)
+        {
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = string.Format("INSERT INTO [dbo].[TBL_PROVEEDORES] ([NIT],[Nombre],[Dirreccion],[Telefono],[Pais],[Ciudad],[Correo],[Encargado],[Estado]) VALUES('"+NIT+"','"+Nombre+"','"+Dirreccion+"',"+Telefono+",'"+Pais+"','"+Ciudad+"','"+Correo+"','"+Encargado+"',"+Estado+")");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        [WebMethod]
+        public void DelProveddor(string NIT)
+        {
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = string.Format("DELETE FROM [dbo].[TBL_PROVEEDORES] WHERE NIT = '" + NIT + "'");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        [WebMethod]
+        public void ModProveedor(string NIT, string Nombre, string Dirreccion, int Telefono, string Pais, string Ciudad, string Correo, string Encargado, int Estado)
+        {
+      
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = string.Format("UPDATE [dbo].[TBL_PROVEEDORES] SET [NIT] = '"+NIT+ "',[Nombre] = '"+Nombre+ "',[Dirreccion] = '"+Dirreccion+"',[Telefono] = "+Telefono+ ",[Pais] = '"+Pais+ "',[Ciudad] = '"+Ciudad+ "',[Correo] = '"+Correo+ "',[Encargado] = '"+Encargado+"',[Estado] = "+Estado+ " WHERE NIT = '"+NIT+"'");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+         }
+  
 
     }
 }

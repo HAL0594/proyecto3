@@ -12,14 +12,14 @@ using Prueba.WSLoad;
 namespace Prueba
 {
 
-    
+
     public partial class Form1 : Form
     {
         WSLoad.DBSoapClient ws = new WSLoad.DBSoapClient();
-        int DPIEliminar;
-        int DPIModificar;
+        string DPIEliminar;
+        string DPIModificar;
         //Datos obtenidos de datagridview
-        Int64 valor1;
+        string valor1;
         string valor2;
         DateTime valor3;
         int valor4;
@@ -34,7 +34,7 @@ namespace Prueba
         public void RegistroSeleccionado()
         {
             //por el numero obtiene la columna
-            valor1 = Int64.Parse(row.Cells[0].Value.ToString());
+            valor1 = row.Cells[0].Value.ToString();
             valor2 = row.Cells[1].Value.ToString();
             valor3 = DateTime.Parse(row.Cells[2].Value.ToString());
             valor4 = int.Parse(row.Cells[3].Value.ToString());
@@ -60,16 +60,17 @@ namespace Prueba
             valor7 = float.Parse(row.Cells[6].Value.ToString());
         }
 
-        public void BuscarAfiliado() {
+        public void BuscarAfiliado()
+        {
             if (string.IsNullOrEmpty(txt_tp0_BusquedaId.Text))
             {
                 MessageBox.Show("Debe ingresar in DPI");
             }
             else
             {
-                String BusqId = this.txt_tp0_BusquedaId.Text;
-                DPIEliminar = int.Parse(BusqId);
-                dataGridView1.DataSource = ws.LoadData("SELECT * FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '" + BusqId + "'", null, null, "TBL_USERS");
+                string BusqId = this.txt_tp0_BusquedaId.Text;
+                DPIEliminar = BusqId;
+                dataGridView1.DataSource = ws.LoadData("SELECT * FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '" + BusqId + "'", null, null, "TBL_AFILIADOS");
 
                 try
                 {
@@ -86,7 +87,8 @@ namespace Prueba
             }
         }
 
-        public void Boton_modificar_TP0() {
+        public void Boton_modificar_TP0()
+        {
             txt_tp2_DPI.Text = valor1.ToString();
             txt_tp2_nombre.Text = valor2;
             dtp_tp2_fnacimiento.Value = valor3;
@@ -98,11 +100,12 @@ namespace Prueba
         }
 
 
-        public void AgregarAfiliado() {
+        public void AgregarAfiliado()
+        {
 
             try
             {
-                Int64 AddDPI;
+                String AddDPI;
                 String AddNombre;
                 String AddApellido;
                 int addTelefono;
@@ -117,7 +120,7 @@ namespace Prueba
                 }
                 else
                 {
-                    AddDPI = Int64.Parse(this.txt_tp1_DPI.Text);
+                    AddDPI = this.txt_tp1_DPI.Text;
                     AddNombre = this.txt_tp1_Nombre.Text;
                     AddApellido = this.txt_tp1_Apellido.Text;
                     addTelefono = int.Parse(this.txt_tp1_Telefono.Text);
@@ -134,10 +137,23 @@ namespace Prueba
             }
         }
 
+        public void ModificarAfiliado() {
+            string ModDpi = txt_tp2_DPI.Text;
+            string ModNom = txt_tp2_nombre.Text;
+            int ModTel = int.Parse(txt_tp2_telefono.Text);
+            string ModFecNac = dtp_tp2_fnacimiento.Text;
+            string ModTipCob = combo_tp2_Cober.SelectedItem.ToString();
+            string ModIniCob = dtp_tp2_IniCober.Text;
+            string ModFinCob = dtp_tp2_FinCober.Text;
+            int ModMon = int.Parse(txt_tp2_monto.Text);
+
+            ws.Actualiza_Afiliado(ModDpi, ModNom, ModFecNac, ModTel, ModIniCob, ModFinCob, ModMon, ModTipCob);
+        }
+
         public Form1()
         {
             InitializeComponent();
-           
+
             combo_tp1_Cober.Items.Add("Premium");
             combo_tp1_Cober.Items.Add("Standar");
 
@@ -148,8 +164,8 @@ namespace Prueba
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-  
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -158,7 +174,7 @@ namespace Prueba
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -168,7 +184,7 @@ namespace Prueba
         private void button1_Click_1(object sender, EventArgs e)
         {
             BuscarAfiliado();
-         
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -185,7 +201,7 @@ namespace Prueba
         }
         private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void label7_Click(object sender, EventArgs e)
         {
@@ -194,7 +210,7 @@ namespace Prueba
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_agregarAfi_Click(object sender, EventArgs e)
@@ -210,7 +226,7 @@ namespace Prueba
 
         private void btn_EliminarAfi_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -220,7 +236,7 @@ namespace Prueba
 
         private void txtEliminar_TextChanged(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -241,7 +257,7 @@ namespace Prueba
 
         private void btn_EliminarAfi_Click_1(object sender, EventArgs e)
         {
-      
+
             ws.DELAfiliado(DPIEliminar);
             dataGridView1.DataSource = ws.LoadData("SELECT * FROM [dbo].[TBL_AFILIADOS] ", null, null, "TBL_USERS");
         }
@@ -251,11 +267,33 @@ namespace Prueba
             tabControl1.SelectedIndex = 1;
         }
 
-    
+        private void label15_Click(object sender, EventArgs e)
+        {
 
-     
-     
+        }
 
-      
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Boton_modificar_TP0();
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            ModificarAfiliado();
+
+
+
+        }
     }
 }

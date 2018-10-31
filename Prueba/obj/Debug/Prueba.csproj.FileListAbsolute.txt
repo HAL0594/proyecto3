@@ -7,14 +7,13 @@ C:\Users\HAL\Documents\Visual Studio 2015\Projects\WSBD\Prueba\obj\Debug\Prueba.
 C:\Users\HAL\Documents\Visual Studio 2015\Projects\WSBD\Prueba\obj\Debug\Prueba.exe
 C:\Users\HAL\Documents\Visual Studio 2015\Projects\WSBD\Prueba\obj\Debug\Prueba.pdb
 C:\Users\HAL\documents\visual studio 2015\Projects\WSBD\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.exe.config
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.exe
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.pdb
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.exe
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.pdb
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Form1.resources
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Properties.Resources.resources
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csproj.GenerateResource.Cache
-C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Form2.resources
-C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Form3.resources
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.exe.config
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.exe
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.pdb
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.exe
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.pdb
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Form1.resources
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Properties.Resources.resources
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csproj.GenerateResource.Cache
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.MantProveedores.resources
