@@ -16,3 +16,4 @@ C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csprojResolv
 C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Form1.resources
 C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Properties.Resources.resources
 C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csproj.GenerateResource.Cache
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.MantProveedores.resources
