@@ -33,6 +33,8 @@
             this.ingresaAfiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagoPrimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +42,8 @@
             // 
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mantenimientoToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem,
+            this.procesosToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(866, 33);
@@ -60,7 +63,7 @@
             // ingresaAfiliadoToolStripMenuItem
             // 
             this.ingresaAfiliadoToolStripMenuItem.Name = "ingresaAfiliadoToolStripMenuItem";
-            this.ingresaAfiliadoToolStripMenuItem.Size = new System.Drawing.Size(220, 30);
+            this.ingresaAfiliadoToolStripMenuItem.Size = new System.Drawing.Size(285, 30);
             this.ingresaAfiliadoToolStripMenuItem.Text = "Ingresa Afiliado";
             this.ingresaAfiliadoToolStripMenuItem.Click += new System.EventHandler(this.ingresaAfiliadoToolStripMenuItem_Click);
             // 
@@ -77,6 +80,20 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(285, 30);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // procesosToolStripMenuItem
+            // 
+            this.procesosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pagoPrimaToolStripMenuItem});
+            this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
+            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
+            this.procesosToolStripMenuItem.Text = "Procesos";
+            // 
+            // pagoPrimaToolStripMenuItem
+            // 
+            this.pagoPrimaToolStripMenuItem.Name = "pagoPrimaToolStripMenuItem";
+            this.pagoPrimaToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.pagoPrimaToolStripMenuItem.Text = "Pago Prima";
             // 
             // Menu
             // 
@@ -102,5 +119,7 @@
         private System.Windows.Forms.ToolStripMenuItem ingresaAfiliadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresoDeProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem procesosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagoPrimaToolStripMenuItem;
     }
 }
