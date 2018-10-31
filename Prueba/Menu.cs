@@ -15,5 +15,25 @@ namespace Prueba
         {
             InitializeComponent();
         }
+
+        private void ingresaAfiliadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmAfiliado = new Form1();
+            frmAfiliado.MdiParent = this;
+            frmAfiliado.Show();
+
+        }
+
+        private void ingresoDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmManProvee = new MantProveedores();
+            frmManProvee.MdiParent = this;
+            frmManProvee.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
     }
 }
