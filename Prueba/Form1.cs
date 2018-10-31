@@ -251,30 +251,11 @@ namespace Prueba
             tabControl1.SelectedIndex = 1;
         }
 
-        private void label15_Click(object sender, EventArgs e)
-        {
+    
 
-        }
+     
+     
 
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            Boton_modificar_TP0();
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_tp1_DPI_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
