@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace Prueba
 {
-    public partial class Form3 : Form
+    public partial class Menu : Form
     {
-        public Form3()
+        public Menu()
         {
             InitializeComponent();
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
