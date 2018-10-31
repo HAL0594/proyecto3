@@ -10,3 +10,9 @@ C:\Users\HAL\documents\visual studio 2015\Projects\WSBD\Prueba\obj\Debug\Prueba.
 C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.exe.config
 C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.exe
 C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.pdb
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.exe
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.pdb
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Form1.resources
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Properties.Resources.resources
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csproj.GenerateResource.Cache

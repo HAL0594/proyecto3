@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_tp0_modificar = new System.Windows.Forms.Button();
             this.btn_tp0_agregar = new System.Windows.Forms.Button();
             this.btn_tp0_EliminarAfi = new System.Windows.Forms.Button();
             this.btn_tp0_buscar = new System.Windows.Forms.Button();
@@ -52,6 +53,13 @@
             this.txt_tp1_DPI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txt_tp2_monto = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dtp_tp2_FinCober = new System.Windows.Forms.DateTimePicker();
+            this.dtp_tp2_IniCober = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.txt_tp2_telefono = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.combo_tp2_Cober = new System.Windows.Forms.ComboBox();
@@ -62,14 +70,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txt_tp2_DPI = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.dtp_tp2_FinCober = new System.Windows.Forms.DateTimePicker();
-            this.dtp_tp2_IniCober = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_tp0_modificar = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txt_tp2_monto = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -107,6 +107,16 @@
             this.tabPage1.Text = "Busqueda Filiados";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btn_tp0_modificar
+            // 
+            this.btn_tp0_modificar.Location = new System.Drawing.Point(168, 81);
+            this.btn_tp0_modificar.Name = "btn_tp0_modificar";
+            this.btn_tp0_modificar.Size = new System.Drawing.Size(75, 23);
+            this.btn_tp0_modificar.TabIndex = 14;
+            this.btn_tp0_modificar.Text = "Modificar";
+            this.btn_tp0_modificar.UseVisualStyleBackColor = true;
+            this.btn_tp0_modificar.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // btn_tp0_agregar
             // 
@@ -345,6 +355,69 @@
             this.tabPage3.Text = "Modificar Afiliado";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // txt_tp2_monto
+            // 
+            this.txt_tp2_monto.Location = new System.Drawing.Point(479, 103);
+            this.txt_tp2_monto.Name = "txt_tp2_monto";
+            this.txt_tp2_monto.Size = new System.Drawing.Size(200, 20);
+            this.txt_tp2_monto.TabIndex = 37;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(420, 110);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(43, 13);
+            this.label11.TabIndex = 36;
+            this.label11.Text = "Monto: ";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(302, 261);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 23);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "Modificar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_3);
+            // 
+            // dtp_tp2_FinCober
+            // 
+            this.dtp_tp2_FinCober.CustomFormat = "yyyy-MM-dd";
+            this.dtp_tp2_FinCober.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_tp2_FinCober.Location = new System.Drawing.Point(479, 71);
+            this.dtp_tp2_FinCober.Name = "dtp_tp2_FinCober";
+            this.dtp_tp2_FinCober.Size = new System.Drawing.Size(200, 20);
+            this.dtp_tp2_FinCober.TabIndex = 34;
+            // 
+            // dtp_tp2_IniCober
+            // 
+            this.dtp_tp2_IniCober.CustomFormat = "yyyy-MM-dd";
+            this.dtp_tp2_IniCober.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_tp2_IniCober.Location = new System.Drawing.Point(479, 35);
+            this.dtp_tp2_IniCober.Name = "dtp_tp2_IniCober";
+            this.dtp_tp2_IniCober.Size = new System.Drawing.Size(200, 20);
+            this.dtp_tp2_IniCober.TabIndex = 33;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(377, 77);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 13);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Fin de cobertura";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(377, 41);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(96, 13);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Inicio de Cobertura";
+            // 
             // txt_tp2_telefono
             // 
             this.txt_tp2_telefono.Location = new System.Drawing.Point(137, 110);
@@ -417,6 +490,7 @@
             // 
             this.txt_tp2_DPI.Location = new System.Drawing.Point(137, 34);
             this.txt_tp2_DPI.Name = "txt_tp2_DPI";
+            this.txt_tp2_DPI.ReadOnly = true;
             this.txt_tp2_DPI.Size = new System.Drawing.Size(200, 20);
             this.txt_tp2_DPI.TabIndex = 20;
             // 
@@ -428,78 +502,6 @@
             this.label13.Size = new System.Drawing.Size(28, 13);
             this.label13.TabIndex = 19;
             this.label13.Text = "DPI:";
-            // 
-            // dtp_tp2_FinCober
-            // 
-            this.dtp_tp2_FinCober.CustomFormat = "yyyy-MM-dd";
-            this.dtp_tp2_FinCober.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_tp2_FinCober.Location = new System.Drawing.Point(479, 71);
-            this.dtp_tp2_FinCober.Name = "dtp_tp2_FinCober";
-            this.dtp_tp2_FinCober.Size = new System.Drawing.Size(200, 20);
-            this.dtp_tp2_FinCober.TabIndex = 34;
-            // 
-            // dtp_tp2_IniCober
-            // 
-            this.dtp_tp2_IniCober.CustomFormat = "yyyy-MM-dd";
-            this.dtp_tp2_IniCober.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_tp2_IniCober.Location = new System.Drawing.Point(479, 35);
-            this.dtp_tp2_IniCober.Name = "dtp_tp2_IniCober";
-            this.dtp_tp2_IniCober.Size = new System.Drawing.Size(200, 20);
-            this.dtp_tp2_IniCober.TabIndex = 33;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(377, 77);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 13);
-            this.label15.TabIndex = 32;
-            this.label15.Text = "Fin de cobertura";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(377, 41);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(96, 13);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Inicio de Cobertura";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(302, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 23);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Modificar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btn_tp0_modificar
-            // 
-            this.btn_tp0_modificar.Location = new System.Drawing.Point(168, 81);
-            this.btn_tp0_modificar.Name = "btn_tp0_modificar";
-            this.btn_tp0_modificar.Size = new System.Drawing.Size(75, 23);
-            this.btn_tp0_modificar.TabIndex = 14;
-            this.btn_tp0_modificar.Text = "Modificar";
-            this.btn_tp0_modificar.UseVisualStyleBackColor = true;
-            this.btn_tp0_modificar.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(420, 110);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 13);
-            this.label11.TabIndex = 36;
-            this.label11.Text = "Monto: ";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // txt_tp2_monto
-            // 
-            this.txt_tp2_monto.Location = new System.Drawing.Point(479, 103);
-            this.txt_tp2_monto.Name = "txt_tp2_monto";
-            this.txt_tp2_monto.Size = new System.Drawing.Size(200, 20);
-            this.txt_tp2_monto.TabIndex = 37;
             // 
             // Form1
             // 

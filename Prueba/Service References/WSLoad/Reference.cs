@@ -16,6 +16,14 @@ namespace Prueba.WSLoad {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSLoad.DBSoap")]
     public interface DBSoap {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string HelloWorld();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetData", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetData();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LoadData", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
@@ -34,7 +42,7 @@ namespace Prueba.WSLoad {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Actualiza_Afiliado", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        void Actualiza_Afiliado(string DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob, string TipoPoliza);
+        void Actualiza_Afiliado(string DPI, string NombreCom, string FechaNac, int Telefono, string InicioCob, string FinCobertura, float MontoCob, string TipoPoliza);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -64,6 +72,14 @@ namespace Prueba.WSLoad {
                 base(binding, remoteAddress) {
         }
         
+        public string HelloWorld() {
+            return base.Channel.HelloWorld();
+        }
+        
+        public System.Data.DataSet GetData() {
+            return base.Channel.GetData();
+        }
+        
         public System.Data.DataTable LoadData(string query, string[] parameter, object[] values, string table) {
             return base.Channel.LoadData(query, parameter, values, table);
         }
@@ -76,8 +92,8 @@ namespace Prueba.WSLoad {
             base.Channel.DELAfiliado(DPI);
         }
         
-        public void Actualiza_Afiliado(string DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob, string TipoPoliza) {
-            base.Channel.Actualiza_Afiliado(DPI, NombreCom, FechaNac, Telefono, MontoCob, TipoPoliza);
+        public void Actualiza_Afiliado(string DPI, string NombreCom, string FechaNac, int Telefono, string InicioCob, string FinCobertura, float MontoCob, string TipoPoliza) {
+            base.Channel.Actualiza_Afiliado(DPI, NombreCom, FechaNac, Telefono, InicioCob, FinCobertura, MontoCob, TipoPoliza);
         }
     }
 }

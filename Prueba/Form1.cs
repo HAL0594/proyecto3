@@ -137,6 +137,19 @@ namespace Prueba
             }
         }
 
+        public void ModificarAfiliado() {
+            string ModDpi = txt_tp2_DPI.Text;
+            string ModNom = txt_tp2_nombre.Text;
+            int ModTel = int.Parse(txt_tp2_telefono.Text);
+            string ModFecNac = dtp_tp2_fnacimiento.Text;
+            string ModTipCob = combo_tp2_Cober.SelectedItem.ToString();
+            string ModIniCob = dtp_tp2_IniCober.Text;
+            string ModFinCob = dtp_tp2_FinCober.Text;
+            int ModMon = int.Parse(txt_tp2_monto.Text);
+
+            ws.Actualiza_Afiliado(ModDpi, ModNom, ModFecNac, ModTel, ModIniCob, ModFinCob, ModMon, ModTipCob);
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -272,6 +285,14 @@ namespace Prueba
 
         private void label11_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            ModificarAfiliado();
+
+
 
         }
     }

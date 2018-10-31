@@ -79,14 +79,14 @@ namespace WSBD
         }
 
         [WebMethod]
-        public void Actualiza_Afiliado(string DPI, string NombreCom, string FechaNac, int Telefono, float MontoCob, string TipoPoliza)
+        public void Actualiza_Afiliado(string DPI, string NombreCom, string FechaNac, int Telefono, string InicioCob, string FinCobertura, float MontoCob, string TipoPoliza)
         {
 
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = string.Format("UPDATE [dbo].[TBL_AFILIADOS] SET [DPI] = ,[NombreCom] = ,[FechaNac] = ,[Telefono] = ,[InicioCob] = ,[FinCobertura] =,[MontoCob] = ,[EstadoPoliza] = ,[TipoPoliza] =  WHERE [DPI] =");
+            cmd.CommandText = string.Format("UPDATE [dbo].[TBL_AFILIADOS] SET [DPI] = '"+DPI+"' ,[NombreCom] = '"+NombreCom+"',[FechaNac] ='"+ FechaNac + "' ,[Telefono] = "+Telefono+",[InicioCob] = '"+InicioCob+"',[FinCobertura] ='"+FinCobertura+"',[MontoCob] = "+MontoCob+",[TipoPoliza] = '"+TipoPoliza+"' WHERE [DPI] = "+DPI+"");
             cmd.ExecuteNonQuery();
             conn.Close();
         }
