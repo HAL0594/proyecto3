@@ -28,21 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresaAfiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresoDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 33);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(866, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // menuStrip2
             // 
@@ -58,7 +50,9 @@
             // mantenimientoToolStripMenuItem
             // 
             this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ingresaAfiliadoToolStripMenuItem});
+            this.ingresaAfiliadoToolStripMenuItem,
+            this.ingresoDeProveedoresToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(144, 29);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
@@ -68,17 +62,33 @@
             this.ingresaAfiliadoToolStripMenuItem.Name = "ingresaAfiliadoToolStripMenuItem";
             this.ingresaAfiliadoToolStripMenuItem.Size = new System.Drawing.Size(220, 30);
             this.ingresaAfiliadoToolStripMenuItem.Text = "Ingresa Afiliado";
+            this.ingresaAfiliadoToolStripMenuItem.Click += new System.EventHandler(this.ingresaAfiliadoToolStripMenuItem_Click);
+            // 
+            // ingresoDeProveedoresToolStripMenuItem
+            // 
+            this.ingresoDeProveedoresToolStripMenuItem.Name = "ingresoDeProveedoresToolStripMenuItem";
+            this.ingresoDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(285, 30);
+            this.ingresoDeProveedoresToolStripMenuItem.Text = "Ingreso de Proveedores";
+            this.ingresoDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.ingresoDeProveedoresToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(285, 30);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(866, 536);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
-            this.MainMenuStrip = this.menuStrip1;
+            this.IsMdiContainer = true;
             this.Name = "Menu";
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -87,10 +97,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresaAfiliadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ingresoDeProveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
