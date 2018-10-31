@@ -12,23 +12,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetData">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetDataResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetDataResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="LoadData">
         <s:complexType>
           <s:sequence>
@@ -105,6 +88,66 @@
       <s:element name="Actualiza_AfiliadoResponse">
         <s:complexType />
       </s:element>
+      <s:element name="AddProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NIT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dirreccion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Telefono" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pais" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ciudad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Encargado" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProveedorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DelProveddor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NIT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelProveddorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ModProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NIT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dirreccion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Telefono" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pais" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ciudad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Encargado" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModProveedorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="er">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="e" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="erResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="erResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -112,12 +155,6 @@
   </wsdl:message>
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetDataSoapIn">
-    <wsdl:part name="parameters" element="tns:GetData" />
-  </wsdl:message>
-  <wsdl:message name="GetDataSoapOut">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
   </wsdl:message>
   <wsdl:message name="LoadDataSoapIn">
     <wsdl:part name="parameters" element="tns:LoadData" />
@@ -143,14 +180,34 @@
   <wsdl:message name="Actualiza_AfiliadoSoapOut">
     <wsdl:part name="parameters" element="tns:Actualiza_AfiliadoResponse" />
   </wsdl:message>
+  <wsdl:message name="AddProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProveedor" />
+  </wsdl:message>
+  <wsdl:message name="AddProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelProveddorSoapIn">
+    <wsdl:part name="parameters" element="tns:DelProveddor" />
+  </wsdl:message>
+  <wsdl:message name="DelProveddorSoapOut">
+    <wsdl:part name="parameters" element="tns:DelProveddorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:ModProveedor" />
+  </wsdl:message>
+  <wsdl:message name="ModProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:ModProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="erSoapIn">
+    <wsdl:part name="parameters" element="tns:er" />
+  </wsdl:message>
+  <wsdl:message name="erSoapOut">
+    <wsdl:part name="parameters" element="tns:erResponse" />
+  </wsdl:message>
   <wsdl:portType name="DBSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetData">
-      <wsdl:input message="tns:GetDataSoapIn" />
-      <wsdl:output message="tns:GetDataSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="LoadData">
       <wsdl:input message="tns:LoadDataSoapIn" />
@@ -168,20 +225,27 @@
       <wsdl:input message="tns:Actualiza_AfiliadoSoapIn" />
       <wsdl:output message="tns:Actualiza_AfiliadoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="AddProveedor">
+      <wsdl:input message="tns:AddProveedorSoapIn" />
+      <wsdl:output message="tns:AddProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelProveddor">
+      <wsdl:input message="tns:DelProveddorSoapIn" />
+      <wsdl:output message="tns:DelProveddorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModProveedor">
+      <wsdl:input message="tns:ModProveedorSoapIn" />
+      <wsdl:output message="tns:ModProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="er">
+      <wsdl:input message="tns:erSoapIn" />
+      <wsdl:output message="tns:erSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="DBSoap" type="tns:DBSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="HelloWorld">
       <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/GetData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -225,20 +289,47 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddProveedor">
+      <soap:operation soapAction="http://tempuri.org/AddProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelProveddor">
+      <soap:operation soapAction="http://tempuri.org/DelProveddor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModProveedor">
+      <soap:operation soapAction="http://tempuri.org/ModProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="er">
+      <soap:operation soapAction="http://tempuri.org/er" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="DBSoap12" type="tns:DBSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="HelloWorld">
       <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetData">
-      <soap12:operation soapAction="http://tempuri.org/GetData" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -275,6 +366,42 @@
     </wsdl:operation>
     <wsdl:operation name="Actualiza_Afiliado">
       <soap12:operation soapAction="http://tempuri.org/Actualiza_Afiliado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProveedor">
+      <soap12:operation soapAction="http://tempuri.org/AddProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelProveddor">
+      <soap12:operation soapAction="http://tempuri.org/DelProveddor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModProveedor">
+      <soap12:operation soapAction="http://tempuri.org/ModProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="er">
+      <soap12:operation soapAction="http://tempuri.org/er" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

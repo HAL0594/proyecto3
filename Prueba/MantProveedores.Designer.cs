@@ -139,6 +139,7 @@
             this.btn_tp0_buscar.TabIndex = 5;
             this.btn_tp0_buscar.Text = "Buscar";
             this.btn_tp0_buscar.UseVisualStyleBackColor = true;
+            this.btn_tp0_buscar.Click += new System.EventHandler(this.btn_tp0_buscar_Click);
             // 
             // btn_tp0_vertodos
             // 

@@ -20,3 +20,4 @@ C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.MantProveedo
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.exe.config
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.exe
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.pdb
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Menu.resources

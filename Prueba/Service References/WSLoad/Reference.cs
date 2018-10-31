@@ -20,10 +20,6 @@ namespace Prueba.WSLoad {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string HelloWorld();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetData", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetData();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LoadData", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
@@ -43,6 +39,26 @@ namespace Prueba.WSLoad {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         void Actualiza_Afiliado(string DPI, string NombreCom, string FechaNac, int Telefono, string InicioCob, string FinCobertura, float MontoCob, string TipoPoliza);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddProveedor", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        void AddProveedor(string NIT, string Nombre, string Dirreccion, int Telefono, string Pais, string Ciudad, string Correo, string Encargado, int Estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DelProveddor", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        void DelProveddor(string NIT);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModProveedor", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        void ModProveedor(string NIT, string Nombre, string Dirreccion, int Telefono, string Pais, string Ciudad, string Correo, string Encargado, int Estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/er", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        string er(string e);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -76,10 +92,6 @@ namespace Prueba.WSLoad {
             return base.Channel.HelloWorld();
         }
         
-        public System.Data.DataSet GetData() {
-            return base.Channel.GetData();
-        }
-        
         public System.Data.DataTable LoadData(string query, string[] parameter, object[] values, string table) {
             return base.Channel.LoadData(query, parameter, values, table);
         }
@@ -94,6 +106,22 @@ namespace Prueba.WSLoad {
         
         public void Actualiza_Afiliado(string DPI, string NombreCom, string FechaNac, int Telefono, string InicioCob, string FinCobertura, float MontoCob, string TipoPoliza) {
             base.Channel.Actualiza_Afiliado(DPI, NombreCom, FechaNac, Telefono, InicioCob, FinCobertura, MontoCob, TipoPoliza);
+        }
+        
+        public void AddProveedor(string NIT, string Nombre, string Dirreccion, int Telefono, string Pais, string Ciudad, string Correo, string Encargado, int Estado) {
+            base.Channel.AddProveedor(NIT, Nombre, Dirreccion, Telefono, Pais, Ciudad, Correo, Encargado, Estado);
+        }
+        
+        public void DelProveddor(string NIT) {
+            base.Channel.DelProveddor(NIT);
+        }
+        
+        public void ModProveedor(string NIT, string Nombre, string Dirreccion, int Telefono, string Pais, string Ciudad, string Correo, string Encargado, int Estado) {
+            base.Channel.ModProveedor(NIT, Nombre, Dirreccion, Telefono, Pais, Ciudad, Correo, Encargado, Estado);
+        }
+        
+        public string er(string e) {
+            return base.Channel.er(e);
         }
     }
 }
