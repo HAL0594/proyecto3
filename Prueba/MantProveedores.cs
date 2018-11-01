@@ -75,9 +75,9 @@ namespace Prueba
             txt_Mod_nombre.Text = valor2;
             txt_Mod_direccion.Text = valor3;
             txt_Mod_telefono.Text = valor4;
-            txt_tp1_correo.Text = valor7;
+            txt_Mod_correo.Text = valor7;
             txt_Mod_NomEn.Text = valor8;
-
+           
             tabControl1.SelectedIndex = 2;
         }
 
@@ -168,7 +168,10 @@ namespace Prueba
         private void button2_Click(object sender, EventArgs e)
         {
 
-        }
+            ws.DelProveddor(NITEliminar);
+            dataGridView1.DataSource = ws.LoadData("SELECT * FROM [dbo].[TBL_PROVEEDORES] ", null, null, "TBL_PROVEEDORES");
+        
+    }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -177,7 +180,50 @@ namespace Prueba
 
         private void btn_tp0_buscar_Click(object sender, EventArgs e)
         {
+            BuscarProveedor();
+        }
 
+        private void btn_tp0_nuevo_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+        }
+
+        private void btn_tp0_modificar_Click(object sender, EventArgs e)
+        {
+            Boton_modificarProveedor_TP0();
+        }
+
+        private void btn_tp1_agregar_Click(object sender, EventArgs e)
+        {
+            AgregarProveedor();
+           
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!(e.RowIndex > -1))
+            {
+                MessageBox.Show("Debe seleccionar un registros");
+                return;
+            }
+            else
+            {
+                row = dataGridView1.Rows[e.RowIndex];
+                MessageBox.Show("" + row);
+                RegistroSeleccionado();
+
+                NITEliminar = valor1;
+            }
+        }
+
+        private void btn_tp2_Actualiza_Click(object sender, EventArgs e)
+        {
+            ModificarProveedor();
+        }
+
+        private void btn_tp0_vertodos_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = ws.LoadData("SELECT * FROM [dbo].[TBL_PROVEEDORES] ", null, null, "TBL_PROVEEDORES");
         }
     }
 }

@@ -146,6 +146,7 @@ namespace Prueba
             string ModIniCob = dtp_tp2_IniCober.Text;
             string ModFinCob = dtp_tp2_FinCober.Text;
             int ModMon = int.Parse(txt_tp2_monto.Text);
+           
 
             ws.Actualiza_Afiliado(ModDpi, ModNom, ModFecNac, ModTel, ModIniCob, ModFinCob, ModMon, ModTipCob);
         }

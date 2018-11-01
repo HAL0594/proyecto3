@@ -21,21 +21,21 @@ namespace Prueba
             else
             {
                 string BusqId = this.TxtNit.Text;
-                DPIEliminar = BusqId;
-                dataGridView1.DataSource = ws.LoadData("SELECT * FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '" + BusqId + "'", null, null, "TBL_AFILIADOS");
+            //    DPIEliminar = BusqId;
+            //    dataGridView1.DataSource = ws.LoadData("SELECT * FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '" + BusqId + "'", null, null, "TBL_AFILIADOS");
 
                 try
                 {
-                    dataGridView1.Rows[0].Selected = true;
-                    row = dataGridView1.Rows[0];
-                    RegistroSeleccionado();
+              //      dataGridView1.Rows[0].Selected = true;
+               //     row = dataGridView1.Rows[0];
+               //     RegistroSeleccionado();
                 }
                 catch (Exception error)
                 {
                     MessageBox.Show("El registro No existe");
                 }
 
-                DPIEliminar = valor1;
+            //    DPIEliminar = valor1;
             }
         }
 

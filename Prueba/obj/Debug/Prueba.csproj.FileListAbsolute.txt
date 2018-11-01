@@ -28,3 +28,5 @@ C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Ma
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Menu.resources
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Properties.Resources.resources
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csproj.GenerateResource.Cache
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.FrmPagosPrima.resources
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Menu.resources
