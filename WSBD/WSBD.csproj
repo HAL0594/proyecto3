@@ -70,7 +70,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\PublishProfiles\prueba.pubxml" />
     <None Include="Properties\PublishProfiles\prueba0594 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\WcfService120181027092459 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\WSproyect.pubxml" />
