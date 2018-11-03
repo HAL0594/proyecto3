@@ -27,7 +27,7 @@ namespace WSBD
 
         //**************************************Conexiona DB************************************************************
 
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-BP8VMUJ; Initial Catalog=TEST; user id=sa;password=123456789;");
+        SqlConnection conn = new SqlConnection("Data Source=localhost; Initial Catalog=TEST; user id=sa;password=Sa123456789;");
         
         //****************************************Carga de Datagridiews*************************************************
 
