@@ -30,16 +30,26 @@ namespace Prueba
 
         public void RegistroSeleccionado()
         {
-            //por el numero obtiene la columna
-            valor1 = row.Cells[0].Value.ToString();
-            valor2 = row.Cells[1].Value.ToString();
-            valor3 = row.Cells[2].Value.ToString();
-            valor4 = row.Cells[3].Value.ToString();
-            valor5 = row.Cells[4].Value.ToString();
-            valor6 = row.Cells[5].Value.ToString();
-            valor7 = row.Cells[6].Value.ToString();
-            valor8 = row.Cells[7].Value.ToString();
-            valor9 = row.Cells[8].Value.ToString();
+
+            try
+            {
+                //por el numero obtiene la columna
+                valor1 = row.Cells[0].Value.ToString();
+                valor2 = row.Cells[1].Value.ToString();
+                valor3 = row.Cells[2].Value.ToString();
+                valor4 = row.Cells[3].Value.ToString();
+                valor5 = row.Cells[4].Value.ToString();
+                valor6 = row.Cells[5].Value.ToString();
+                valor7 = row.Cells[6].Value.ToString();
+                valor8 = row.Cells[7].Value.ToString();
+                valor9 = row.Cells[8].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(""+ex);
+
+            }
+          
         }
 
         public void BuscarProveedor()
@@ -71,14 +81,24 @@ namespace Prueba
 
         public void Boton_modificarProveedor_TP0()
         {
-            txt_Mod_NIT.Text = valor1;
-            txt_Mod_nombre.Text = valor2;
-            txt_Mod_direccion.Text = valor3;
-            txt_Mod_telefono.Text = valor4;
-            txt_Mod_correo.Text = valor7;
-            txt_Mod_NomEn.Text = valor8;
-           
-            tabControl1.SelectedIndex = 2;
+
+            try
+            {
+                txt_Mod_NIT.Text = valor1;
+                txt_Mod_nombre.Text = valor2;
+                txt_Mod_direccion.Text = valor3;
+                txt_Mod_telefono.Text = valor4;
+                txt_Mod_correo.Text = valor7;
+                txt_Mod_NomEn.Text = valor8;
+
+                tabControl1.SelectedIndex = 2;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+
+            }
+          
         }
 
 
@@ -124,17 +144,25 @@ namespace Prueba
 
         public void ModificarProveedor()
         {
+            try
+            {
+                String ModNIT = this.txt_Mod_NIT.Text;
+                String ModNombre = this.txt_Mod_nombre.Text;
+                String ModDireccion = this.txt_Mod_direccion.Text;
+                int ModTelefono = int.Parse(this.txt_Mod_telefono.Text);
+                String ModPais = this.combo_Mod_pais.SelectedItem.ToString();
+                String ModCiudad = this.combo_Mod_ciudad.SelectedItem.ToString();
+                String ModCorreo = this.txt_Mod_correo.Text;
+                string ModEncargado = this.txt_Mod_NomEn.Text;
+                int ModEstado = int.Parse(this.combo_Mod_estado.SelectedItem.ToString());
+                ws.ModProveedor(ModNIT, ModNombre, ModDireccion, ModTelefono, ModPais, ModCiudad, ModCorreo, ModEncargado, ModEstado);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
 
-            String ModNIT = this.txt_Mod_NIT.Text;
-            String ModNombre = this.txt_Mod_nombre.Text;
-            String ModDireccion = this.txt_Mod_direccion.Text;
-            int ModTelefono = int.Parse(this.txt_Mod_telefono.Text);
-            String ModPais = this.combo_Mod_pais.SelectedItem.ToString();
-            String ModCiudad = this.combo_tp1_ciudad.SelectedItem.ToString();
-            String ModCorreo = this.txt_Mod_correo.Text;
-            string ModEncargado = this.txt_Mod_NomEn.Text;
-            int ModEstado = int.Parse(this.combo_Mod_estado.SelectedItem.ToString());
-            ws.ModProveedor(ModNIT, ModNombre, ModDireccion, ModTelefono, ModPais, ModCiudad, ModCorreo, ModEncargado, ModEstado);
+            }
+            
         }
 
         public MantProveedores()
@@ -209,7 +237,7 @@ namespace Prueba
             else
             {
                 row = dataGridView1.Rows[e.RowIndex];
-                MessageBox.Show("" + row);
+                MessageBox.Show("Selecciono la Fila");
                 RegistroSeleccionado();
 
                 NITEliminar = valor1;

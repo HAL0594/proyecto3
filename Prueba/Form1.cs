@@ -16,6 +16,8 @@ namespace Prueba
     public partial class Form1 : Form
     {
         WSLoad.DBSoapClient ws = new WSLoad.DBSoapClient();
+       
+
         string DPIEliminar;
         string DPIModificar;
         //Datos obtenidos de datagridview
@@ -33,35 +35,46 @@ namespace Prueba
 
         public void RegistroSeleccionado()
         {
-            //por el numero obtiene la columna
-            valor1 = row.Cells[0].Value.ToString();
-            valor2 = row.Cells[1].Value.ToString();
-            valor3 = DateTime.Parse(row.Cells[2].Value.ToString());
-            valor4 = int.Parse(row.Cells[3].Value.ToString());
-            string valida = row.Cells[4].Value.ToString();
-            if (valida != "")
+            try
             {
-                valor5 = DateTime.Parse(row.Cells[4].Value.ToString());
+                //por el numero obtiene la columna
+                valor1 = row.Cells[0].Value.ToString();
+                valor2 = row.Cells[1].Value.ToString();
+                valor3 = DateTime.Parse(row.Cells[2].Value.ToString());
+                valor4 = int.Parse(row.Cells[3].Value.ToString());
+                string valida = row.Cells[4].Value.ToString();
+                if (valida != "")
+                {
+                    valor5 = DateTime.Parse(row.Cells[4].Value.ToString());
+                }
+                else
+                {
+                    valor5 = DateTime.Now.Date;
+                }
+                string valida2 = row.Cells[5].Value.ToString();
+                if (valida != "")
+                {
+                    valor6 = DateTime.Parse(row.Cells[5].Value.ToString());
+                }
+                else
+                {
+                    valor6 = DateTime.Now.Date;
+                }
+
+                valor7 = float.Parse(row.Cells[6].Value.ToString());
             }
-            else
+            catch (Exception ex)
             {
-                valor5 = DateTime.Now.Date;
-            }
-            string valida2 = row.Cells[5].Value.ToString();
-            if (valida != "")
-            {
-                valor6 = DateTime.Parse(row.Cells[5].Value.ToString());
-            }
-            else
-            {
-                valor6 = DateTime.Now.Date;
+                MessageBox.Show(""+ ex);
+
             }
 
-            valor7 = float.Parse(row.Cells[6].Value.ToString());
+          
         }
 
         public void BuscarAfiliado()
         {
+
             if (string.IsNullOrEmpty(txt_tp0_BusquedaId.Text))
             {
                 MessageBox.Show("Debe ingresar in DPI");
@@ -89,14 +102,24 @@ namespace Prueba
 
         public void Boton_modificar_TP0()
         {
-            txt_tp2_DPI.Text = valor1.ToString();
-            txt_tp2_nombre.Text = valor2;
-            dtp_tp2_fnacimiento.Value = valor3;
-            txt_tp2_telefono.Text = valor4.ToString();
-            dtp_tp2_IniCober.Value = valor5;
-            dtp_tp2_FinCober.Value = valor6;
-            txt_tp2_monto.Text = valor7.ToString();
-            tabControl1.SelectedIndex = 2;
+
+            try
+            {
+                txt_tp2_DPI.Text = valor1.ToString();
+                txt_tp2_nombre.Text = valor2;
+                dtp_tp2_fnacimiento.Value = valor3;
+                txt_tp2_telefono.Text = valor4.ToString();
+                dtp_tp2_IniCober.Value = valor5;
+                dtp_tp2_FinCober.Value = valor6;
+                txt_tp2_monto.Text = valor7.ToString();
+                tabControl1.SelectedIndex = 2;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Asegurese de que todods lo campos sean correcto y esten llenos");
+
+            }
+           
         }
 
 
@@ -127,6 +150,7 @@ namespace Prueba
                     addFechaNaci = this.dtp_tp1_fechaNaci.Text;
                     addTipoPoliza = this.combo_tp1_Cober.SelectedItem.ToString();
                     NomCompleto = AddNombre + " " + AddApellido;
+                   
                     ws.ADDAfiliado(AddDPI, NomCompleto, addFechaNaci, addTelefono, monto, addTipoPoliza);
                     dataGridView1.DataSource = ws.LoadData("SELECT * FROM [dbo].[TBL_AFILIADOS] ", null, null, "TBL_USERS");
                 }
@@ -138,17 +162,29 @@ namespace Prueba
         }
 
         public void ModificarAfiliado() {
-            string ModDpi = txt_tp2_DPI.Text;
-            string ModNom = txt_tp2_nombre.Text;
-            int ModTel = int.Parse(txt_tp2_telefono.Text);
-            string ModFecNac = dtp_tp2_fnacimiento.Text;
-            string ModTipCob = combo_tp2_Cober.SelectedItem.ToString();
-            string ModIniCob = dtp_tp2_IniCober.Text;
-            string ModFinCob = dtp_tp2_FinCober.Text;
-            int ModMon = int.Parse(txt_tp2_monto.Text);
-           
 
-            ws.Actualiza_Afiliado(ModDpi, ModNom, ModFecNac, ModTel, ModIniCob, ModFinCob, ModMon, ModTipCob);
+            try
+            {
+
+                string ModDpi = txt_tp2_DPI.Text;
+                string ModNom = txt_tp2_nombre.Text;
+                int ModTel = int.Parse(txt_tp2_telefono.Text);
+                string ModFecNac = dtp_tp2_fnacimiento.Text;
+                string ModTipCob = combo_tp2_Cober.SelectedItem.ToString();
+                string ModIniCob = dtp_tp2_IniCober.Text;
+                string ModFinCob = dtp_tp2_FinCober.Text;
+                int ModMon = int.Parse(txt_tp2_monto.Text);
+
+
+                ws.Actualiza_Afiliado(ModDpi, ModNom, ModFecNac, ModTel, ModIniCob, ModFinCob, ModMon, ModTipCob);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+
+            }
+           
         }
 
         public Form1()
@@ -232,7 +268,7 @@ namespace Prueba
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = ws.LoadData("SELECT * FROM [dbo].[TBL_AFILIADOS] ", null, null, "TBL_USERS");
+            dataGridView1.DataSource = ws.LoadData("SELECT * FROM [dbo].[TBL_AFILIADOS] ", null, null, "TBL_AFILIADOS");
         }
 
         private void txtEliminar_TextChanged(object sender, EventArgs e)
@@ -241,19 +277,29 @@ namespace Prueba
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (!(e.RowIndex > -1))
-            {
-                MessageBox.Show("Debe seleccionar un registros");
-                return;
-            }
-            else
-            {
-                row = dataGridView1.Rows[e.RowIndex];
-                MessageBox.Show("" + row);
-                RegistroSeleccionado();
 
-                DPIEliminar = valor1;
+            try
+            {
+                if (!(e.RowIndex > -1))
+                {
+                    MessageBox.Show("Debe seleccionar un registros");
+                    return;
+                }
+                else
+                {
+                    row = dataGridView1.Rows[e.RowIndex];
+                    MessageBox.Show("Selecciono la Fila");
+                    RegistroSeleccionado();
+
+                    DPIEliminar = valor1;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+
+            }
+           
         }
 
         private void btn_EliminarAfi_Click_1(object sender, EventArgs e)

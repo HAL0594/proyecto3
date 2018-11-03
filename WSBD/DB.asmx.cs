@@ -27,9 +27,9 @@ namespace WSBD
 
         //**************************************Conexiona DB************************************************************
 
-        SqlConnection conn = new SqlConnection("Data Source=LOCALHOST; Initial Catalog=TEST; Integrated Security=True;");
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-BP8VMUJ; Initial Catalog=TEST; user id=sa;password=123456789;");
         
-        //****************************************Carga de Datagridsiews*************************************************
+        //****************************************Carga de Datagridiews*************************************************
 
         [WebMethod]
         public DataTable LoadData(string query, string[] parameter, object[] values, string table) {
@@ -119,7 +119,6 @@ namespace WSBD
         [WebMethod]
         public void ModProveedor(string NIT, string Nombre, string Dirreccion, int Telefono, string Pais, string Ciudad, string Correo, string Encargado, int Estado)
         {
-      
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
@@ -128,7 +127,97 @@ namespace WSBD
             cmd.ExecuteNonQuery();
             conn.Close();
          }
-  
 
+        
+        public void AddTran(string NIT, string DPI,string respuesta, string FechCob)
+        {
+           
+            DateTime fechaActual = DateTime.Now;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = string.Format("INSERT INTO [dbo].[TBL_TRANSACCIONES]([NIT_Proveedor],[DPI_Paciente],[Fecha_Cobertura],[Respuesta],[Fecha_Consulta])VALUES('"+NIT+"','"+DPI+"','"+fechaActual+"','"+respuesta+"','"+fechaActual+"')");
+            cmd.ExecuteNonQuery();
+           
+        }
+
+        [WebMethod]
+        public string GetAfililiado(string NIT, string DPI, string FechNac, string FechCob)
+        {
+            
+            conn.Open();
+            DataTable TablaNIT;
+            SqlDataAdapter cmdNIT;
+            DataSet dsNIT;
+            string Permite;
+            try
+            {
+                cmdNIT = new SqlDataAdapter("SELECT [NIT],[Estado] FROM [dbo].[TBL_PROVEEDORES] WHERE NIT = '" + NIT + "'", conn);
+                dsNIT = new DataSet();
+                cmdNIT.Fill(dsNIT);
+                TablaNIT = dsNIT.Tables[0];
+                Permite = TablaNIT.Rows[0]["Estado"].ToString();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                return "No Esta registrado como Proveedor o Aun no tiene Permisos";
+            }
+
+            
+                if (Permite == "1")
+                {
+                SqlDataAdapter cmdDPI;
+                DataSet dsDPI;
+                DataTable Tabla;
+                string stado;
+                try
+                {
+                    cmdDPI = new SqlDataAdapter("SELECT [DPI],[EstadoPoliza] FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '" + DPI + "'", conn);
+                    dsDPI = new DataSet();
+                    cmdDPI.Fill(dsDPI);
+                    Tabla = dsDPI.Tables[0];
+                    stado = Tabla.Rows[0]["EstadoPoliza"].ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    return "El DPI no esta registrado";
+                }
+               
+                    string respuesta = "";
+                    if (stado == "1")
+                    {        
+                        respuesta = "Cubierto";   
+                    }
+                    else
+                    {
+                        respuesta = "Sin Cobertura";
+                    }
+
+             //   try {
+             //       AddTran(NIT, DPI, respuesta, FechCob);
+             //      } catch (Exception ex)
+               //    {
+               //     conn.Close();
+              //      return "Asegurese de llenar correctamente los campos" + ex;
+               //    }
+                conn.Close();
+                return respuesta;
+                    
+                }
+                else
+                {
+                conn.Close();
+                return "Su NIT Aparece como Inactivo";
+                }
+
+
+             
+
+             }
+
+        }
     }
-}
+

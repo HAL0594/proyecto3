@@ -54,6 +54,11 @@ namespace Prueba.WSLoad {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         void ModProveedor(string NIT, string Nombre, string Dirreccion, int Telefono, string Pais, string Ciudad, string Correo, string Encargado, int Estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAfililiado", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        string GetAfililiado(string NIT, string DPI, string FechNac, string FechCob);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -113,6 +118,10 @@ namespace Prueba.WSLoad {
         
         public void ModProveedor(string NIT, string Nombre, string Dirreccion, int Telefono, string Pais, string Ciudad, string Correo, string Encargado, int Estado) {
             base.Channel.ModProveedor(NIT, Nombre, Dirreccion, Telefono, Pais, Ciudad, Correo, Encargado, Estado);
+        }
+        
+        public string GetAfililiado(string NIT, string DPI, string FechNac, string FechCob) {
+            return base.Channel.GetAfililiado(NIT, DPI, FechNac, FechCob);
         }
     }
 }
