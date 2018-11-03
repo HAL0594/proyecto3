@@ -48,6 +48,16 @@ namespace Prueba
         }
 
 
+        public void Agregarpago()
+        {
+
+            
+            ws.AddTran(this.TxtNit,this.txtmontoP,this.lbFinCobertura);
+            MessageBox.Show("Pago efectuado");
+        }
+
+
+
         public FrmPagosPrima()
         {
             InitializeComponent();
@@ -85,7 +95,7 @@ namespace Prueba
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Agregarpago();
         }
 
         private void label6_Click(object sender, EventArgs e)

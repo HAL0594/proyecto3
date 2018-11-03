@@ -134,6 +134,18 @@
       <s:element name="ModProveedorResponse">
         <s:complexType />
       </s:element>
+      <s:element name="AddTran">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DPI" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="FinCobertura" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTranResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="GetAfililiado">
         <s:complexType>
           <s:sequence>
@@ -201,6 +213,12 @@
   <wsdl:message name="ModProveedorSoapOut">
     <wsdl:part name="parameters" element="tns:ModProveedorResponse" />
   </wsdl:message>
+  <wsdl:message name="AddTranSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTran" />
+  </wsdl:message>
+  <wsdl:message name="AddTranSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTranResponse" />
+  </wsdl:message>
   <wsdl:message name="GetAfililiadoSoapIn">
     <wsdl:part name="parameters" element="tns:GetAfililiado" />
   </wsdl:message>
@@ -239,6 +257,10 @@
     <wsdl:operation name="ModProveedor">
       <wsdl:input message="tns:ModProveedorSoapIn" />
       <wsdl:output message="tns:ModProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTran">
+      <wsdl:input message="tns:AddTranSoapIn" />
+      <wsdl:output message="tns:AddTranSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetAfililiado">
       <wsdl:input message="tns:GetAfililiadoSoapIn" />
@@ -312,6 +334,15 @@
     </wsdl:operation>
     <wsdl:operation name="ModProveedor">
       <soap:operation soapAction="http://tempuri.org/ModProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTran">
+      <soap:operation soapAction="http://tempuri.org/AddTran" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -396,6 +427,15 @@
     </wsdl:operation>
     <wsdl:operation name="ModProveedor">
       <soap12:operation soapAction="http://tempuri.org/ModProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTran">
+      <soap12:operation soapAction="http://tempuri.org/AddTran" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

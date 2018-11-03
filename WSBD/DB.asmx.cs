@@ -129,18 +129,22 @@ namespace WSBD
          }
 
         [WebMethod]
-        public void AddTran(string DPI, float monto)
+        public void AddTran(string DPI, float monto, DateTime FinCobertura)
         {
            
             DateTime fechaActual = DateTime.Now;
-           // DateTime FINCOB = fechaActual + 30;
+            FinCobertura = FinCobertura.AddMonths(1);
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = string.Format("INSERT INTO [dbo].[TransPago]([NitAfiliado],[monto],[fecha])VALUES('"+DPI+"','"+monto+"','"+fechaActual+"')");
-            cmd.CommandText = string.Format("UPDATE [dbo].[TBL_AFILIADOS] SET [FinCobertura] ='" + fechaActual +30 + "'  WHERE [DPI] = " + DPI + "");
             cmd.ExecuteNonQuery();
-           
+
+            SqlCommand cmd1 = new SqlCommand();
+            cmd1.Connection = conn;
+            cmd1.CommandType = CommandType.Text;
+            cmd1.CommandText = string.Format("UPDATE [dbo].[TBL_AFILIADOS] SET [FinCobertura] ='" + FinCobertura + "'  WHERE [DPI] = " + DPI + "");
+            cmd1.ExecuteNonQuery();
         }
 
         [WebMethod]
