@@ -128,15 +128,17 @@ namespace WSBD
             conn.Close();
          }
 
-        
-        public void AddTran(string NIT, string DPI,string respuesta, string FechCob)
+        [WebMethod]
+        public void AddTran(string DPI, float monto)
         {
            
             DateTime fechaActual = DateTime.Now;
+           // DateTime FINCOB = fechaActual + 30;
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = string.Format("INSERT INTO [dbo].[TBL_TRANSACCIONES]([NIT_Proveedor],[DPI_Paciente],[Fecha_Cobertura],[Respuesta],[Fecha_Consulta])VALUES('"+NIT+"','"+DPI+"','"+fechaActual+"','"+respuesta+"','"+fechaActual+"')");
+            cmd.CommandText = string.Format("INSERT INTO [dbo].[TransPago]([NitAfiliado],[monto],[fecha])VALUES('"+DPI+"','"+monto+"','"+fechaActual+"')");
+            cmd.CommandText = string.Format("UPDATE [dbo].[TBL_AFILIADOS] SET [FinCobertura] ='" + fechaActual +30 + "'  WHERE [DPI] = " + DPI + "");
             cmd.ExecuteNonQuery();
            
         }
@@ -195,14 +197,6 @@ namespace WSBD
                     {
                         respuesta = "Sin Cobertura";
                     }
-
-             //   try {
-             //       AddTran(NIT, DPI, respuesta, FechCob);
-             //      } catch (Exception ex)
-               //    {
-               //     conn.Close();
-              //      return "Asegurese de llenar correctamente los campos" + ex;
-               //    }
                 conn.Close();
                 return respuesta;
                     
