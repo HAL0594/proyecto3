@@ -26,7 +26,7 @@ namespace Prueba
                 string BusqId = this.TxtNit.Text;
                 var consulta = new DataTable(); 
 
-                consulta = ws.LoadData("SELECT NombreCom FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '" + BusqId + "'", null, null, "TBL_AFILIADOS");
+                consulta = ws.LoadData("SELECT NombreCom, FechaNac, Telefono, InicioCob, FinCobertura, MontoCob  FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '" + BusqId + "'", null, null, "TBL_AFILIADOS");
 
                 
 
@@ -36,9 +36,14 @@ namespace Prueba
                     return;
                 }
 
-                this.TxtNombre.Text =  consulta.Rows[0]["NombreCom"].ToString();
-                    
-                   
+                this.lbnombre.Text =  consulta.Rows[0]["NombreCom"].ToString();
+                this.lbfechaNac.Text = consulta.Rows[0]["FechaNac"].ToString();
+                this.lbTelefono.Text = consulta.Rows[0]["Telefono"].ToString();
+                this.lbInicioCob.Text = consulta.Rows[0]["InicioCob"].ToString();
+                this.lbFinCobertura.Text = consulta.Rows[0]["FinCobertura"].ToString();
+                this.txtmontoP.Text = consulta.Rows[0]["MontoCob"].ToString();
+
+                return;   
             }
         }
 
@@ -59,6 +64,31 @@ namespace Prueba
         }
 
         private void FrmPagosPrima_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

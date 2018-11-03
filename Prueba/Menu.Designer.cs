@@ -93,7 +93,7 @@
             // pagoPrimaToolStripMenuItem
             // 
             this.pagoPrimaToolStripMenuItem.Name = "pagoPrimaToolStripMenuItem";
-            this.pagoPrimaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pagoPrimaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.pagoPrimaToolStripMenuItem.Text = "Pago Prima";
             this.pagoPrimaToolStripMenuItem.Click += new System.EventHandler(this.pagoPrimaToolStripMenuItem_Click);
             // 
@@ -105,9 +105,9 @@
             this.ClientSize = new System.Drawing.Size(577, 348);
             this.Controls.Add(this.menuStrip2);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Menu";
-            this.Text = "Menu";
+            this.Text = "Proyecto Final Web Developer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
