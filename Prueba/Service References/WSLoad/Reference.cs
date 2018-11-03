@@ -9,10 +9,9 @@
 //------------------------------------------------------------------------------
 
 namespace Prueba.WSLoad {
-    using System;
     using System.Data;
-    using System.Windows.Forms;
-
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSLoad.DBSoap")]
     public interface DBSoap {
@@ -132,11 +131,6 @@ namespace Prueba.WSLoad {
         
         public string GetAfililiado(string NIT, string DPI, string FechNac, string FechCob) {
             return base.Channel.GetAfililiado(NIT, DPI, FechNac, FechCob);
-        }
-
-        internal void AddTran(TextBox txtNit, TextBox txtmontoP, Label lbFinCobertura)
-        {
-            throw new NotImplementedException();
         }
     }
 }
