@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,6 +72,8 @@
   <ItemGroup>
     <None Include="Properties\PublishProfiles\prueba0594 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\WcfService120181027092459 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\WSproyect.pubxml" />
+    <None Include="Properties\PublishProfiles\WSproyecto.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,6 @@
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WServicePro\bin\WServicePro.dll.config
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WServicePro\bin\WServicePro.dll
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WServicePro\bin\WServicePro.pdb
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WServicePro\obj\Release\WServicePro.csprojResolveAssemblyReference.cache
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WServicePro\obj\Release\WServicePro.dll
+C:\Users\HAL\Source\Repos\HAL0594\proyecto3\WServicePro\obj\Release\WServicePro.pdb
