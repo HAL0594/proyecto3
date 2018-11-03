@@ -21,7 +21,6 @@ C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.ex
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.pdb
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.exe
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\bin\Debug\Prueba.pdb
-C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Form1.resources
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.MantProveedores.resources
 C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Menu.resources
@@ -30,3 +29,5 @@ C:\Users\marvin.cortez\source\repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.cs
 C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.FrmPagosPrima.resources
 C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.Menu.resources
 C:\Users\HAL\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache
+C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.FrmPagosPrima.resources
+C:\Users\marvin.cortez\Source\Repos\HAL0594\proyecto3\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache

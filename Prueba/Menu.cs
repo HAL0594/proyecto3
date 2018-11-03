@@ -35,5 +35,12 @@ namespace Prueba
         {
             System.Environment.Exit(0);
         }
+
+        private void pagoPrimaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form PagoPrima = new FrmPagosPrima();
+            PagoPrima.MdiParent = this;
+            PagoPrima.Show();
+        }
     }
 }
