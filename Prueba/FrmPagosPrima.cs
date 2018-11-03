@@ -12,6 +12,9 @@ namespace Prueba
     public partial class FrmPagosPrima : Form
     {
 
+        WSLoad.DBSoapClient ws = new WSLoad.DBSoapClient();
+
+
         public void BuscarAfiliado()
         {
             if (string.IsNullOrEmpty(TxtNit.Text))
@@ -21,21 +24,21 @@ namespace Prueba
             else
             {
                 string BusqId = this.TxtNit.Text;
-            //    DPIEliminar = BusqId;
-            //    dataGridView1.DataSource = ws.LoadData("SELECT * FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '" + BusqId + "'", null, null, "TBL_AFILIADOS");
+                var consulta = new DataTable(); 
 
-                try
-                {
-              //      dataGridView1.Rows[0].Selected = true;
-               //     row = dataGridView1.Rows[0];
-               //     RegistroSeleccionado();
-                }
-                catch (Exception error)
-                {
+                consulta = ws.LoadData("SELECT * FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '" + BusqId + "'", null, null, "TBL_AFILIADOS");
+
+                
+
+                if (consulta.Rows.Count == 0){
+
                     MessageBox.Show("El registro No existe");
+                    return;
                 }
 
-            //    DPIEliminar = valor1;
+                this.TxtNombre.Text =  consulta.Rows[0]["Nombre"];
+                    
+                   
             }
         }
 
