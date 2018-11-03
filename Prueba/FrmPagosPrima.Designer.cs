@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TxtNit = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -63,11 +64,19 @@
             this.button1.UseWaitCursor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // TxtNombre
+            // 
+            this.TxtNombre.Location = new System.Drawing.Point(130, 87);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(242, 26);
+            this.TxtNombre.TabIndex = 3;
+            // 
             // FrmPagosPrima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 506);
+            this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TxtNit);
             this.Controls.Add(this.label1);
@@ -86,5 +95,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtNit;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox TxtNombre;
     }
 }
