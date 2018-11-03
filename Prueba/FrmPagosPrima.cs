@@ -26,7 +26,7 @@ namespace Prueba
                 string BusqId = this.TxtNit.Text;
                 var consulta = new DataTable(); 
 
-                consulta = ws.LoadData("SELECT * FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '" + BusqId + "'", null, null, "TBL_AFILIADOS");
+                consulta = ws.LoadData("SELECT NombreCom FROM [dbo].[TBL_AFILIADOS] WHERE DPI = '" + BusqId + "'", null, null, "TBL_AFILIADOS");
 
                 
 
@@ -36,7 +36,7 @@ namespace Prueba
                     return;
                 }
 
-                this.TxtNombre.Text =  consulta.Rows[0]["Nombre"];
+                this.TxtNombre.Text =  consulta.Rows[0]["NombreCom"].ToString();
                     
                    
             }
